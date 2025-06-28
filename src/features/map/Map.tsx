@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   },
   buttons: {
     position: 'absolute',
-    bottom: 30,
+    bottom: 50,
     left: 10,
     right: 10,
     flexDirection: 'row',
