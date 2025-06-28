@@ -12,10 +12,10 @@ import { useMap } from './hooks/useMap';
 const Map = () => {
   const {
     polygonCoords,
-    setPolygonCoords,
     handleMapPress,
     handleCompletePolygon,
     handleClearAll,
+    savedPolygons,
   } = useMap();
 
   return (
@@ -89,6 +89,27 @@ const Map = () => {
             />
           </ShapeSource>
         )}
+
+        {/* Saved polygons */}
+        {savedPolygons.map((polygon, idx) => (
+          <ShapeSource
+            key={`saved-${idx}`}
+            id={`saved-${idx}`}
+            shape={{
+              type: 'Feature',
+              geometry: {
+                type: 'Polygon',
+                coordinates: [[...polygon, polygon[0]]],
+              },
+              properties: {},
+            }}
+          >
+            <FillLayer
+              id={`fill-${idx}`}
+              style={{ fillColor: 'rgba(0, 0, 255, 0.3)' }}
+            />
+          </ShapeSource>
+        ))}
       </MapView>
 
       <View style={styles.buttons}>
