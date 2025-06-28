@@ -25,12 +25,14 @@ const Map = () => {
         style={styles.map}
         zoomEnabled={true}
         onPress={handleMapPress}
+        scaleBarEnabled={false}
       >
         {/*  Hyderabad's coordinates to center the map at */}
         <Camera
           centerCoordinate={[78.491684, 17.38714]}
           zoomLevel={12}
           animationMode={'flyTo'}
+          animationDuration={3000}
         />
 
         {/* 
