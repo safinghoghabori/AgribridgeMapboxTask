@@ -8,6 +8,7 @@ import {
   CircleLayer,
 } from '@rnmapbox/maps';
 import { useMap } from './hooks/useMap';
+import PolygonMarkers from './components/PolygonMarkers';
 
 const Map = () => {
   const {
@@ -112,6 +113,9 @@ const Map = () => {
             />
           </ShapeSource>
         ))}
+
+        {/* Polygon Markers - Display markers from saved polygons */}
+        <PolygonMarkers savedPolygons={savedPolygons} />
       </MapView>
 
       <View style={styles.buttons}>
