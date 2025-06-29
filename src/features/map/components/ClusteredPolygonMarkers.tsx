@@ -102,4 +102,4 @@ const ClusteredPolygonMarkers: React.FC<ClusteredPolygonMarkersProps> = ({
   );
 };
 
-export default ClusteredPolygonMarkers;
+export default React.memo(ClusteredPolygonMarkers);

@@ -47,4 +47,4 @@ const PolygonMarkers: React.FC<PolygonMarkersProps> = ({ savedPolygons }) => {
   );
 };
 
-export default PolygonMarkers;
+export default React.memo(PolygonMarkers);
