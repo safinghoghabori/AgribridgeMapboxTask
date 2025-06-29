@@ -1,97 +1,81 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+## 🛠️ Installation & Setup
 
-# Getting Started
+To run this project locally, follow these steps:
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+### Prerequisites
 
-## Step 1: Start Metro
+- Node.js (v18 or later)
+- npm
+- JDK17
+- Android Studio / Xcode (for emulator or real device testing)
+- React Native CLI
+- For more details: https://reactnative.dev/docs/set-up-your-environment
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+#### Step 1: Clone the Repository
 
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```bash
+git clone https://github.com/safinghoghabori/AgribridgeMapboxTask.git
 ```
 
-## Step 2: Build and run your app
+#### Step 2: Install Dependencies
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+cd AgribridgeMapboxTask
+npm install
+```
 
-### Android
+#### Step 3: Run the app
 
-```sh
-# Using npm
+```bash
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
-### iOS
+## 🔧 Features
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+- Satellite Mapbox library integration with React Native
+- Drawing a Polygon on a Map
+- Saving a Polygon so that it can be accessed across sessions
+- Display all saved Polygons along with markers
+- Implemented Marker Clustering to group multiple markers together
+- Followed best practices to improve Performance and UI & UX
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## 👉 Demo
 
-```sh
-bundle install
-```
+- **APK Download:** [Download APK](https://drive.google.com/file/d/1iSxG-jS4P6yGlvwZWe5ASYD40OQ0qUil/view?usp=sharing)
 
-Then, and every time you update your native dependencies, run:
+  - How to download and run .apk on your physical device?
+    - Click on the download apk link above
+    - Download the .apk file named `apk-release.apk`
+    - Find this file and double click on it -> A system popup will be visible to allow "install unknown apps" permission from Settings
+    - Click on Install
+    - Click on Open
 
-```sh
-bundle exec pod install
-```
+- **Screen Recording:** [Watch the Demo](https://drive.google.com/file/d/1sW-G1ZLk5SXr9-6ti7sVu-THBuMCTkH3/view?usp=sharing)
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+  - To know how to use this application, please watch the recording.
 
-```sh
-# Using npm
-npm run ios
+## 📌 Miscellaneous
 
-# OR using Yarn
-yarn ios
-```
+- Added a patch to fix the error while integrating @rnmapbox/map:
+  - Task :rnmapbox_maps:compileDebugKotlin FAILED - The error occurs during the Kotlin compilation step in Android. This is rnmapbox/maps bug for react-native: "0.80.0" CLI
+  - Please follow this link for more details: https://github.com/rnmapbox/maps/issues/3883
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 📚 References
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- What is Mapbox?
+  Mapbox is a modern location platform that provides developers with the building blocks to add maps, navigation, and search to their applications.
 
-## Step 3: Modify your app
+- Mapbox docs for setting up react native
 
-Now that you have successfully run the app, let's make changes!
+  - The Mapbox Maps SDK for React Native is a community-maintained, open-source React Native library and not provided by Mapbox.
+  - https://github.com/rnmapbox/maps (sdk)
+  - https://rnmapbox.github.io/ (docs)
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+- Mapbox Satellite
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+  - https://docs.mapbox.com/help/glossary/mapbox-satellite/
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- Mapbox Documentation: https://docs.mapbox.com/help/getting-started/
+- Mapbox Guide to setup: https://docs.mapbox.com/android/maps/guides/
+- @rnmapbox/maps configuration: https://github.com/rnmapbox/maps/blob/main/docs/GettingStarted.md
+- Async Storage: https://react-native-async-storage.github.io/async-storage/docs/install
