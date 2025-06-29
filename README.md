@@ -56,14 +56,15 @@ npm run android
 
 ## 📌 Miscellaneous
 
-- Added a patch to fix the error while integrating @rnmapbox/map:
-  - Task :rnmapbox_maps:compileDebugKotlin FAILED - The error occurs during the Kotlin compilation step in Android. This is rnmapbox/maps bug for react-native: "0.80.0" CLI
+- Added a patch to fix the error while integrating `@rnmapbox/map`:
+  - `Task :rnmapbox_maps:compileDebugKotlin FAILED` - The error occurs during the Kotlin compilation step in Android. This is rnmapbox/maps bug for react-native: "0.80.0" CLI
   - Please follow this link for more details: https://github.com/rnmapbox/maps/issues/3883
 
 ## 📚 References
 
 - What is Mapbox?
-  Mapbox is a modern location platform that provides developers with the building blocks to add maps, navigation, and search to their applications.
+
+  - Mapbox is a modern location platform that provides developers with the building blocks to add maps, navigation, and search to their applications.
 
 - Mapbox docs for setting up react native
 
