@@ -39,7 +39,11 @@ export const SavedPolygons: React.FC<SavedPolygonsProps> = React.memo(
       <>
         {polygonShapes.map(({ key, id, shape }) => (
           <ShapeSource key={key} id={id} shape={shape}>
-            <FillLayer id={`fill-${id}`} style={layerStyles.polygonFill} />
+            <FillLayer
+              id={`fill-${id}`}
+              style={layerStyles.polygonFill}
+              belowLayerID="clusters" // to display polygon layer below the clusters hence avoid overlapping
+            />
           </ShapeSource>
         ))}
       </>
