@@ -119,7 +119,9 @@ const Map = () => {
       </MapView>
 
       <View style={styles.buttons}>
-        <Button title="Complete Polygon" onPress={handleCompletePolygon} />
+        {polygonCoords.length > 0 && (
+          <Button title="Complete Polygon" onPress={handleCompletePolygon} />
+        )}
         <Button title="Clear All" onPress={handleClearAll} />
       </View>
     </View>
