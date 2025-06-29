@@ -57,6 +57,7 @@ const Map = () => {
 
       <ActionButtons
         polygonCoords={polygonCoords}
+        savedPolygons={savedPolygons}
         onCompletePolygon={handleCompletePolygon}
         onClearAll={handleClearAll}
       />

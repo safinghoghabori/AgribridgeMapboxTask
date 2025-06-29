@@ -3,17 +3,19 @@ import { Button, StyleSheet, View } from 'react-native';
 
 interface ActionButtonsProps {
   polygonCoords: [number, number][];
+  savedPolygons: [number, number][][];
   onCompletePolygon: () => void;
   onClearAll: () => void;
 }
 
 export const ActionButtons: React.FC<ActionButtonsProps> = React.memo(
-  ({ polygonCoords, onCompletePolygon, onClearAll }) => {
-    const showCompleteButton = polygonCoords.length > 0;
+  ({ polygonCoords, savedPolygons, onCompletePolygon, onClearAll }) => {
+    // If no markers are present, dont show any action buttons
+    if (polygonCoords.length === 0 && savedPolygons.length === 0) return null;
 
     return (
       <View style={styles.buttons}>
-        {showCompleteButton && (
+        {polygonCoords.length > 0 && (
           <Button title="Complete Polygon" onPress={onCompletePolygon} />
         )}
         <Button title="Clear All" onPress={onClearAll} />
