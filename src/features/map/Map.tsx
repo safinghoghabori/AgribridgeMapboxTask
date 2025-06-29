@@ -8,6 +8,7 @@ import {
   CircleLayer,
 } from '@rnmapbox/maps';
 import { useMap } from './hooks/useMap';
+import ClusteredPolygonMarkers from './components/ClusteredPolygonMarkers';
 import PolygonMarkers from './components/PolygonMarkers';
 
 const Map = () => {
@@ -38,11 +39,12 @@ const Map = () => {
 
         {/* 
             ShapeSource is a map content source that supplies vector shapes to be shown on the map. 
-            The shape may be an url or a GeoJSON object
+            The shape may be an url or a GeoJSON object.
          */}
 
-        {/* Display circles for user click
-            Geometry types: Point, Polygon etc...
+        {/* 
+            Display circles for user clicks
+            Geometry types can be: Point, Polygon etc...
         */}
         {polygonCoords.length > 0 && (
           <ShapeSource
@@ -71,7 +73,7 @@ const Map = () => {
           </ShapeSource>
         )}
 
-        {/* Polygon */}
+        {/* Draw a Polygon */}
         {polygonCoords.length > 2 && (
           <ShapeSource
             id="polygonSource"
@@ -93,7 +95,7 @@ const Map = () => {
           </ShapeSource>
         )}
 
-        {/* Saved polygons */}
+        {/* Display saved Polygons */}
         {savedPolygons.map((polygon, idx) => (
           <ShapeSource
             key={`saved-${idx}`}
@@ -114,8 +116,11 @@ const Map = () => {
           </ShapeSource>
         ))}
 
-        {/* Polygon Markers - Display markers from saved polygons */}
-        <PolygonMarkers savedPolygons={savedPolygons} />
+        {/* Polygon Markers - Display markers from saved polygons - without clustering */}
+        {/* <PolygonMarkers savedPolygons={savedPolygons} /> */}
+
+        {/* Polygon Markers - Display clustered markers from saved polygons */}
+        <ClusteredPolygonMarkers savedPolygons={savedPolygons} />
       </MapView>
 
       <View style={styles.buttons}>
