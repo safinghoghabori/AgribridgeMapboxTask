@@ -33,7 +33,6 @@ export const DrawingPolygon: React.FC<DrawingPolygon> = React.memo(
         <FillLayer
           id="polygonFill"
           style={layerStyles.polygonFill}
-          belowLayerID="clusters" // to display polygon layer below the clusters hence avoid overlapping
         />
       </ShapeSource>
     );
