@@ -12,16 +12,13 @@ export const useMap = () => {
     loadSavedPolygons();
   }, []);
 
-  const handleMapPress = useCallback(
-    (e: GeoJSON.Feature) => {
-      if (e.geometry.type === 'Point') {
-        const { geometry } = e;
-        const [longitude, latitude] = geometry.coordinates;
-        setPolygonCoords(prev => [...prev, [longitude, latitude]]);
-      }
-    },
-    [polygonCoords],
-  );
+  const handleMapPress = useCallback((e: GeoJSON.Feature) => {
+    if (e.geometry.type === 'Point') {
+      const { geometry } = e;
+      const [longitude, latitude] = geometry.coordinates;
+      setPolygonCoords(prev => [...prev, [longitude, latitude]]);
+    }
+  }, []);
 
   const handleCompletePolygon = useCallback(async () => {
     if (polygonCoords.length < 3) {
@@ -37,7 +34,7 @@ export const useMap = () => {
 
     // Clear current drawing
     setPolygonCoords([]);
-  }, [polygonCoords]);
+  }, [polygonCoords, savedPolygons]);
 
   const loadSavedPolygons = async () => {
     const data = await AsyncStorageHelper.getPolygons();
@@ -52,7 +49,7 @@ export const useMap = () => {
 
     // Clear local storage
     await AsyncStorageHelper.removePolygons();
-  }, [polygonCoords]);
+  }, []);
 
   return {
     polygonCoords,
