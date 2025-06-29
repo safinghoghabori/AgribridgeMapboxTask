@@ -25,7 +25,7 @@ export const useMap = () => {
 
   const handleCompletePolygon = useCallback(async () => {
     if (polygonCoords.length < 3) {
-      Alert.alert('A polygon needs at least 3 points.');
+      Alert.alert('Oops!', 'A polygon needs at least 3 points.');
       return;
     }
 

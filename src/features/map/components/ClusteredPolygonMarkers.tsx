@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { ShapeSource, CircleLayer, SymbolLayer } from '@rnmapbox/maps';
-import { StyleSheet } from 'react-native';
 import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
 import { Colors } from '../../../utilities/Theme';
 

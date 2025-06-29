@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Alert, Button } from 'react-native';
+import { View, StyleSheet, Button } from 'react-native';
 import React from 'react';
 import {
   MapView,
@@ -9,7 +9,12 @@ import {
 } from '@rnmapbox/maps';
 import { useMap } from './hooks/useMap';
 import ClusteredPolygonMarkers from './components/ClusteredPolygonMarkers';
-import PolygonMarkers from './components/PolygonMarkers';
+import {
+  centerCoordinate,
+  mapStyleURL,
+  mapZoomLevel,
+} from '../../utilities/AppConstants';
+// import PolygonMarkers from './components/PolygonMarkers';
 
 const Map = () => {
   const {
@@ -23,7 +28,7 @@ const Map = () => {
   return (
     <View style={styles.container}>
       <MapView
-        styleURL="mapbox://styles/mapbox/satellite-v9"
+        styleURL={mapStyleURL}
         style={styles.map}
         zoomEnabled={true}
         onPress={handleMapPress}
@@ -31,8 +36,8 @@ const Map = () => {
       >
         {/*  Hyderabad's coordinates to center the map at */}
         <Camera
-          centerCoordinate={[78.491684, 17.38714]}
-          zoomLevel={12}
+          centerCoordinate={centerCoordinate}
+          zoomLevel={mapZoomLevel}
           animationMode={'flyTo'}
           animationDuration={3000}
         />
